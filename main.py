@@ -1,3 +1,13 @@
+"""
+======================================
+Rotate Dicom image and Create 3D array
+======================================
+
+"""
+
+# author  : Lee, Junyoung
+# license : SNU RPLab
+
 import numpy as np
 import xml.etree.ElementTree as ET
 import os
@@ -5,11 +15,13 @@ import pydicom as dcm
 import matplotlib.pyplot as plt
 from scipy import ndimage
 
-file_directory = 'C:/Users/admin/Desktop/'
+print(__doc__)
 
-whole_files = os.listdir(file_directory)
+PathXml = 'C:/INFINITT/BNCT_TEMP/'
+
+whole_files = os.listdir(PathXml)
 list(whole_files)
-xml_file = os.path.join(file_directory, whole_files[0])
+xml_file = os.path.join(PathXml, whole_files[0])
 xml_doc = ET.parse(xml_file)
 
 root = xml_doc.getroot()
